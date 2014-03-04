@@ -1,4 +1,8 @@
 Grocerygogo::Application.routes.draw do
+  get "stores/index"
+  get "stores/show"
+  get "stores/new"
+  get "stores/edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :products
