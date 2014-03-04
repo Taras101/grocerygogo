@@ -19,8 +19,7 @@ development:
   encoding: unicode
   database: grocerygogo_development
   pool: 5
-  username: grocerygogo
-  password:
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +47,11 @@ test:
   encoding: unicode
   database: grocerygogo_test
   pool: 5
-  username: grocerygogo
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: grocerygogo_production
   pool: 5
-  username: grocerygogo
-  password:
+
