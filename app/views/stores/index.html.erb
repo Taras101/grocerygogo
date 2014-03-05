@@ -1,3 +1,5 @@
-<h1>Stores#index</h1>
-<p>Find me in app/views/stores/index.html.erb</p>
-<%= @store[0].name %><br>
+<h1>Stores</h1>
+<%= @store.each do |store|%>
+<%= store.name %><br>
+  <% end %>
+<div> <%= link_to 'Products', products_path %> </div>
