@@ -29,7 +29,7 @@
   <%= f.fields_for :prices do |p| %>
 
       <div class="field">
-        <%= p.label :price %><br />
+        <%= p.label :price_in_cents %><br />
         <%= p.text_field :price %>
       </div>
 
@@ -42,6 +42,16 @@
         <%= p.label :measure %><br />
         <%= p.text_field :measure %>
       </div>
+
+      <div class="field">
+        <%= p.label :valid_from %><br />
+        <%= p.date_select :valid_from %>
+      </div>
+
+      <div class="field">
+        <%= p.label :valid_to %><br />
+        <%= p.date_select :valid_to %>
+        </div>
 
     <div class="field">
         <%= p.select(:store_id, Store.all.map { |s| [s.name,s.id] })  %><br />
