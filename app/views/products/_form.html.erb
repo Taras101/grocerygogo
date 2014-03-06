@@ -1,3 +1,5 @@
+
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -12,6 +14,9 @@
   <% end %>
 
   <div class="field">
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -23,6 +28,25 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
+
+  <%= f.fields_for :prices do |p| %>
+
+      <div class="field">
+        <%= p.label :price %><br />
+        <%= p.text_field :price %>
+      </div>
+
+      <div class="field">
+        <%= p.label :amount %><br />
+        <%= p.text_field :amount %>
+      </div>
+
+      <div class="field">
+        <%= p.label :measure %><br />
+        <%= p.text_field :measure %>
+      </div>
+
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

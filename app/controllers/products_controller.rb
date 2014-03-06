@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
+		@product.prices.build
 	end
 
 	def create
@@ -33,7 +34,8 @@ class ProductsController < ApplicationController
 	private
 
   def product_params
-  	params.require(:product).permit(:name, :brand, :notes )
+  	params.require(:product).permit(:name, :brand, :notes,
+  																	prices_attributes: [:price, :measure, :amount, :store_id] )
   end
 
 end
