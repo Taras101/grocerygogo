@@ -1,4 +1,4 @@
-<h1>Stores#new</h1>
+<h1>Add Stores</h1>
 <%= form_for(@store) do |f| %>
   <% if @store.errors.any? %>
     <div id="error_explanation">
@@ -20,3 +20,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+<div> <%= link_to 'Back to All Stores', stores_path %> </div>

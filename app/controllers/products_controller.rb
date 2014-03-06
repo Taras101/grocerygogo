@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 	def create
 		 @product = Product.new(product_params)
 			 if @product.save
-	  		redirect_to products_url
+	  		redirect_to new_product_url
 	  	else
 	  		render :new
 		end
