@@ -1,16 +1,26 @@
 <h1> Products </h1>
 <%= @products.each do |product|%>
-    <h2>
-      <%= product.name %>
-    </h2>
-    <h2>
-      <%= product.brand %>
-    </h2>
-    <h2>
-      <%= product.notes %>
-    </h2>
-  <% end %>
+  <h4>
+    <%= product.name %>
+  </h4>
+  <h4>
+    <%= product.brand %>
+  </h4>
+  <h4>
+    <%= product.notes %>
+  </h4>
 
+  <h4>$
+    <%= product.prices.last.price %>
+  </h4>
+  <h4>
+   <%= product.prices.last.amount %>
+   </h4>
+   <h4>
+     <%= product.prices.last.measure %>
+   </h4>
+
+<% end %>
   <div> <%= link_to 'Stores', stores_path %> </div>
   <div> <%= link_to 'Add Products', new_product_path %> </div>
 
