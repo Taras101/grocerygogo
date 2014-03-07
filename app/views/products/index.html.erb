@@ -1,5 +1,6 @@
 <div> <%= link_to 'Stores', stores_path %> </div>
   <div> <%= link_to 'Add Products', new_product_path %> </div>
+<div> <%= link_to 'Show all current flyer products', products_path %> </div>
   <% Store.all.each do |s| %>
     <%= link_to s.name, store_products_path(s)  %>
   <% end %>
@@ -10,12 +11,9 @@
 <% end %>
 <h1> Products </h1>
 <%= @products.each do |price|%>
-  <p> <%= price.product.name %></p>
-  <p><%= price.product.brand %></p>
+  <p> <%= price.product.name %> , <%= price.product.brand %></p>
   <p><%= price.product.notes %></p>
-  <p>$<%= price.product.prices.last.formatted_price %></p>
-  <p><%= price.product.prices.last.amount %></p>
-  <p><%= price.product.prices.last.measure %></p>
+  <p>$<%= price.product.prices.last.formatted_price %>per<%= price.product.prices.last.amount %><%= price.product.prices.last.measure %></p>
 <% end %>
 
 
