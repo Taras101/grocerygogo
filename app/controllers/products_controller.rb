@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   def product_params
   	params.require(:product).permit(:name, :brand, :notes,
-  																	prices_attributes: [:price, :measure, :amount, :store_id] )
+  																	prices_attributes: [:price, :measure, :amount, :store_id,:valid_from, :valid_to] )
   end
 
 end

@@ -1,7 +1,7 @@
 class Price < ActiveRecord::Base
 	belongs_to :store
 	belongs_to :product
-	validates :price, :measure, :amount ,presence: true
+	validates :price, :measure, :amount ,:valid_from, :valid_to ,presence: true
 	scope :current, -> {where("valid_from < ? and valid_to > ?", Time.now, Time.now)}
 
 	def formatted_price
