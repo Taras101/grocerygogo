@@ -13,13 +13,20 @@ class ProductsController < ApplicationController
 	  		render :new
 		end
 	end
+
 	def show
 		@product = Product.find(params[:id])
 	end
 
 	def index
-		@products = Product.all
+		if params[:store_id]
+			@store = Store.find(params[:store_id])
 
+			# Search scoped to the current store
+			@products = Product.search(params[:search], @store)
+		else
+  		@products = Product.search(params[:search])
+  	end
 	end
 
 	def edit

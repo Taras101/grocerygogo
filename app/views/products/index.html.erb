@@ -1,26 +1,22 @@
-<h1> Products </h1>
-<%= @products.each do |product|%>
-  <h4>
-    <%= product.name %>
-  </h4>
-  <h4>
-    <%= product.brand %>
-  </h4>
-  <h4>
-    <%= product.notes %>
-  </h4>
-
-  <h4>$
-    <%= product.prices.last.formatted_price %>
-  </h4>
-  <h4>
-   <%= product.prices.last.amount %>
-   </h4>
-   <h4>
-     <%= product.prices.last.measure %>
-   </h4>
-
-<% end %>
-  <div> <%= link_to 'Stores', stores_path %> </div>
+<div> <%= link_to 'Stores', stores_path %> </div>
   <div> <%= link_to 'Add Products', new_product_path %> </div>
+  <% Store.all.each do |s| %>
+    <%= link_to s.name, store_products_path(s)  %>
+  <% end %>
+  <%= form_tag products_path, :method => 'get' do %>
+  <p><%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<h1> Products </h1>
+<%= @products.each do |price|%>
+  <p> <%= price.product.name %></p>
+  <p><%= price.product.brand %></p>
+  <p><%= price.product.notes %></p>
+  <p>$<%= price.product.prices.last.formatted_price %></p>
+  <p><%= price.product.prices.last.amount %></p>
+  <p><%= price.product.prices.last.measure %></p>
+<% end %>
+
+
 

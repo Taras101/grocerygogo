@@ -8,4 +8,12 @@ class Price < ActiveRecord::Base
     price_in_dollars = price.to_f / 100
     sprintf("%.2f", price_in_dollars)
   end
+  def self.search(search)
+	  if search
+	    find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{search.downcase}%"])
+	  else
+	    find(:all)
+	  end
+	end
+
 end
