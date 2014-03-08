@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
 	accepts_nested_attributes_for :prices, :stores
 	validates :name, :brand,presence: true
 
+
 	 def self.search(search, store = nil)
 	 	#prices = Price.current.includes(:product)
 
