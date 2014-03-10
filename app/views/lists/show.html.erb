@@ -1,2 +1,5 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div>
+ <p> <%= @list.item %></p>
+</div>
+
+<%= link_to 'Edit List', edit_list_path(@list) %>

@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   def new
     @list = List.new
-
+    @lists = List.search(params[:search])
   end
 
   def create
