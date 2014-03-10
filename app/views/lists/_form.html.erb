@@ -3,18 +3,17 @@
     <div id="error_explanation">
       <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
       <ul>
-      <% @list.errors.full_messages.each do |msg| %>
+        <% @list.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-      <div class="field">
-        <%= f.label :item %><br />
-        <%= f.text_field :item %>
-      </div>
-
+  <div class="field">
+    <%= f.label :item %><br />
+    <%= f.text_field :item %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
