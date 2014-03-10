@@ -1,4 +1,23 @@
 <h1> Grocery List </h1>
-<%= @lists.each do |item|%>
-  <p> <%= item.item %></p>
+<%= @lists.each do |list|%>
+  <p> <%= list.item %></p>
+<% end %>
+
+<h1>Flyer results</h1>
+	<%= @lists.each do |list|%>
+  <p>
+  	<% pro = Product.search(list.item).each %>
+		<% if pro %>
+		<%= pro.each do |p| %>
+
+  		<%= p.product.name %>
+  		<%= p.product.brand %>
+  		<%= p.product.notes %>
+  		$<%= p.formatted_price %> per
+  		<%= p.amount %>
+  		<%= p.measure %>
+  		<%= p.store.id %>
+  	<% end %>
+		<% end %>
+  </p>
 <% end %>
