@@ -1,0 +1,4 @@
+<h1> lists </h1>
+<%= @lists.each do |item|%>
+  <p> <%= link_to item.item ,list_path(item.id) %>
+<% end %>
