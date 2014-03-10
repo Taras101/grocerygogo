@@ -1,8 +1,7 @@
 <div>
  <p> <%= @product.name %> , <%= @product.brand %></p>
-  <p><%= @product.notes %></p>
-  <p>$<%= @product.prices.last.formatted_price %>per<%= @product.prices.last.amount %><%= @product.prices.last.measure %></p>
-
+ <p><%= @product.notes %></p>
+ <p>$<%= @product.prices.last.formatted_price %>per<%= @product.prices.last.amount %><%= @product.prices.last.measure %></p>
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %>

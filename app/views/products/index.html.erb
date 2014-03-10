@@ -1,20 +1,22 @@
 <div> <%= link_to 'Stores', stores_path %> </div>
-  <div> <%= link_to 'Add Products', new_product_path %> </div>
+<div> <%= link_to 'Add Products', new_product_path %> </div>
 <div> <%= link_to 'Show all current flyer products', products_path %> </div>
+
   <% Store.all.each do |s| %>
     <%= link_to s.name, store_products_path(s)  %>
   <% end %>
-  <%= form_tag products_path, :method => 'get' do %>
-  <p><%= text_field_tag :search, params[:search] %>
+
+  <%= form_tag products_path, remote: true ,:method => 'get', id: 'search-form' do %>
+    <p><%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-<h1> Products </h1>
-<%= @products.each do |price|%>
-  <p> <%= link_to price.product.name ,product_path(price.product.id) %> , <%= price.product.brand %></p>
-  <p><%= price.product.notes %></p>
-  <p>$<%= price.product.prices.last.formatted_price %>per<%= price.product.prices.last.amount %><%= price.product.prices.last.measure %></p>
-<% end %>
+    </p>
+  <% end %>
+  <div id="products">
+    <%= render "products" %>
+  </div>
+
+
+
 
 
 

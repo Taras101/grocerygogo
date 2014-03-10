@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, :brand,presence: true
 
 
-	 def self.search(search, store = nil)
+	def self.search(search, store = nil)
 	 	#prices = Price.current.includes(:product)
 
 	  unless search.blank?

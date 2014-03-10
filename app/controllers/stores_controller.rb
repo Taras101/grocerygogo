@@ -7,12 +7,12 @@ class StoresController < ApplicationController
   	@store = Store.find(params[:id])
   end
   def create
-		 @store = Store.new(store_params)
-		 if @store.save
-  		redirect_to stores_url
-  	else
-  		render :new
-  	end
+		@store = Store.new(store_params)
+		  if @store.save
+  		  redirect_to stores_url
+  	  else
+  		  render :new
+  	  end
 	end
 
   def new
