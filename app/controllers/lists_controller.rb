@@ -19,17 +19,12 @@ class ListsController < ApplicationController
   end
 
   def index
-    if params[:id]
-      @list = List.find(params[:id])
-      respond_to do |format|
-      # Search scoped to the current store
-        format.html { @lists = list.search(params[:search], @store) }
-        format.js { }
-      end
+    @list = current_user.list
+    @lists = List.search(params[:search])
 
-    else
-      @lists = List.search(params[:search])
-
+    respond_to do |format|
+      format.html { }
+      format.js { }
     end
   end
 
