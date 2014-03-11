@@ -1,0 +1,23 @@
+
+USER STORY
+____________________________
+
+As a user, I will be able to sign in
+As a user, I will be able to put in my shopping list
+As a user, I will be able to pick which stores I want to go to
+As a user, I will be able to use my current location to find stores nearest to me
+As a user, I will be able to pick from the stores list of savings
+As a user, I will see which products are not on sale at certain stores
+As a user, I will be able to add products from that specific store
+
+As an Administrator, I will be able to add stores
+As an Administrator, I will be able to add grocery products to a specific store
+As an Administrator, I will be able to add price to products
+
+
+
+
+
+
+VRS 2
+As a user, I will be able able to see my past grocery list
