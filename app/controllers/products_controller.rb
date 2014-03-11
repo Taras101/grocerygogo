@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+	before_filter :not_authenticated
 	def new
 		@product = Product.new
 		@product.prices.build

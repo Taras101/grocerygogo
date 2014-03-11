@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :not_authenticated
   def new
     @list = List.new
     @lists = List.search(params[:search])
@@ -55,7 +56,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:item)
+    params.require(:list).permit(:item, :user_id)
   end
 
 end

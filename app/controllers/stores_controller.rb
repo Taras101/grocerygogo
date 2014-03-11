@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  before_filter :not_authenticated
   def index
   	@store = Store.all
   end
