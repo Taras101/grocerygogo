@@ -1,4 +1,9 @@
-
+<script>
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
 <%= link_to 'View Grocery List', lists_path %>
 
 <%= render 'form' %>
