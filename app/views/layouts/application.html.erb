@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p class="userinfo">
+      <% if current_user %>
+        Logged in as <%= link_to current_user.email, new_list_path%>
+        <%= link_to "Log out", logout_path %>
+      <% else %>
+        <%= link_to "Log in", login_path %> or <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </p>
+   <% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+    <% end %>
 
 <%= yield %>
-
+<script>
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
 </body>
 </html>

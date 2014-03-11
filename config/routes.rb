@@ -15,7 +15,7 @@ Grocerygogo::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :products
   resources :lists
-  root 'products#index'
+  root 'lists#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

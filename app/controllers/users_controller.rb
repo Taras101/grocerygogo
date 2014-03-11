@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @users = User.new(user_params)
 
       if @users.save
-        redirect_to products_url, :notice => "Signed Up!"
+        redirect_to new_list_url, :notice => "Signed Up!"
       else
         render :new
       end
