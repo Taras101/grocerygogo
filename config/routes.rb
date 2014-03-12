@@ -4,20 +4,20 @@ Grocerygogo::Application.routes.draw do
   resources :stores do
     resources :products, :only => [:index]
   end
+  resources :products, :only => [:index]
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
   resources :sessions
-  resources :users
-  resources :stores
+  resources :users do
+    resources :grocery_items
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :products
-  resources :grocery_items
-  root 'grocery_items#new'
+  root 'sessions#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

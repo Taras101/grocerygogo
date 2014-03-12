@@ -16,6 +16,7 @@ class GroceryItemsController < ApplicationController
   end
 
   def show
+
     @groceryitem = GroceryItem.find(params[:id])
   end
 
