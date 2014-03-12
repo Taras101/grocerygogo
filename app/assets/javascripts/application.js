@@ -16,17 +16,13 @@
 //= require_tree .
 
 $(document).ready(function() {
-	$("input[type=text]:first").focus();
-  $('#search-form').submit(function(event) {
-    event.preventDefault();
-    var searchValue = $('#search').val();
-
-    $.getScript('/products?search=' + searchValue);
-
-    $(function() {
-        $( "#sortable" ).sortable({
-            placeholder: "ui-sortable-placeholder"
-        });
+    $( "#sortable" ).sortable({
+        placeholder: "ui-sortable-placeholder"
     });
-  });
+    $("input[type=text]:first").focus();
+    $('#search-form').submit(function(event) {
+        event.preventDefault();
+        var searchValue = $('#search').val();
+        $.getScript('/products?search=' + searchValue);
+    });
 });

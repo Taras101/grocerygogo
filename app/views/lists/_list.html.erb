@@ -6,7 +6,6 @@
 </ul>
 <h1>Flyer results</h1>
 	<%  @lists.each do |list|%>
-
   	<% pro = Product.search(list.item).each %>
 		<% if pro %>
 			<%pro.each do |p| %>
