@@ -15,6 +15,7 @@
 //= require_tree .
 
 $(document).ready(function() {
+	$("input[type=text]:first").focus();
   $('#search-form').submit(function(event) {
     event.preventDefault();
     var searchValue = $('#search').val();
