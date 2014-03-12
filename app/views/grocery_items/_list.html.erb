@@ -1,12 +1,12 @@
-<h1> Grocery List </h1>
+<h1> Grocery groceryitem </h1>
 <ul id="sortable" >
-	<% @lists.each do |list|%>
-	  <li> <%= list.item %></li>
+	<% @groceryitems.each do |groceryitem|%>
+	  <li> <%= groceryitem.item %></li>
 	<% end %>
 </ul>
 <h1>Flyer results</h1>
-	<%  @lists.each do |list|%>
-  	<% pro = Product.search(list.item).each %>
+	<%  @groceryitems.each do |groceryitem|%>
+  	<% pro = Product.search(groceryitem.item).each %>
 		<% if pro %>
 			<%pro.each do |p| %>
 			<p>

@@ -1,4 +1,4 @@
-class List < ActiveRecord::Base
+class GroceryItem < ActiveRecord::Base
 	belongs_to :user
 	def self.search(search)
 	  if search
