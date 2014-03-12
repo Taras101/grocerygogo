@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require_tree .
 
@@ -22,5 +23,10 @@ $(document).ready(function() {
 
     $.getScript('/products?search=' + searchValue);
 
+    $(function() {
+        $( "#sortable" ).sortable({
+            placeholder: "ui-sortable-placeholder"
+        });
+    });
   });
 });

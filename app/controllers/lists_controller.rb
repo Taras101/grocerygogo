@@ -6,7 +6,9 @@ class ListsController < ApplicationController
   end
 
   def create
+
     @list = List.new(list_params)
+    @list.user_id = current_user.id
     if @list.save
       redirect_to new_list_url
     else
@@ -19,6 +21,7 @@ class ListsController < ApplicationController
   end
 
   def index
+
     @list = current_user.list
     @lists = List.search(params[:search])
 

@@ -7,7 +7,10 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require jquery.ui.all
  *= require_self
  *= require_tree .
  */
+ #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+ #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+ #sortable li span { position: absolute; margin-left: -1.3em; }

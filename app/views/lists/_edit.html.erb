@@ -1,8 +1,19 @@
 <h1> Grocery List </h1>
-<ul class="sortable">
+<ul id="sortable">
 <% @lists.each do |item|%>
-  <li> <%= item.item %>
+ <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+ 	<%= item.item %></li>
 			<%= link_to "Delete", item, :method => :delete ,:confirm => "Are you sure you want to delete this from your list?" %>
   </li>
-</ul>
+
 <% end %>
+</ul>
+<ul id="sortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+    <li class="ui-state-default">Item 3</li>
+    <li class="ui-state-default">Item 4</li>
+    <li class="ui-state-default">Item 5</li>
+    <li class="ui-state-default">Item 6</li>
+    <li class="ui-state-default">Item 7</li>
+</ul>
