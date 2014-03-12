@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
-   @grocery_item = User.grocery_items
+
    @user = User.find(params[:id])
+   @groceryitems = @user.grocery_items
   end
 
   def new
