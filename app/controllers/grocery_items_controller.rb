@@ -43,9 +43,9 @@ class GroceryItemsController < ApplicationController
   end
 
   def destroy
-    @groceryitem = GroceryItem.find(params[:id])
+    @groceryitem = current_user.grocery_items
     @groceryitem.destroy
-    redirect_to new_grocery_item_path
+    redirect_to new_user_grocery_item_url
   end
 
   private
