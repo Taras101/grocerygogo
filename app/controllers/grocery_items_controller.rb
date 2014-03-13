@@ -49,8 +49,10 @@ class GroceryItemsController < ApplicationController
   end
 
   def sort
-    params[@groceryitems].each_with_index do |id, index|
-      GroceryItem.update_all([’position=?’, index+1], [’id=?’, id])
+    @groceryitems = current_user.grocery_items
+      @groceryitems.each do |groceryitem|
+      groceryitem.position = params['items'].index(groceryitem.id.to_s) + 1
+      groceryitem.save
     end
     render :nothing => true
   end

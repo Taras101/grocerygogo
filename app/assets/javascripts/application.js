@@ -19,7 +19,18 @@
 $(document).ready(function() {
 		$(document).foundation();
     $( "#sortable" ).sortable({
-        placeholder: "ui-sortable-placeholder"
+        placeholder: "ui-sortable-placeholder",
+    update: function(){
+          $.ajax({
+              type: 'post',
+              data: $('#sortable').sortable('serialize'),
+              dataType: 'script',
+              complete: function(request){
+                 $('#sortable').effect('highlight');
+              },
+              url: '/users/14/grocery_items/sort'
+            });
+          }
     });
     $("input[type=text]:first").focus();
     $('#search-form').submit(function(event) {
