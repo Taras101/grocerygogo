@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login @user
-      redirect_to new_grocery_item_path, :notice => "Signed Up!"
+      redirect_to user_grocery_items_path, :notice => "Signed Up!"
     else
       render :new
     end

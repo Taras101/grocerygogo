@@ -2,29 +2,26 @@ class GroceryItemsController < ApplicationController
   before_filter :not_authenticated
   def new
     @groceryitem = GroceryItem.new
-    @groceryitems = GroceryItem.search(params[:search])
+    @groceryitems = current_user.grocery_items
   end
 
   def create
     @groceryitem = GroceryItem.new(groceryitem_params)
     @groceryitem.user = current_user
     if @groceryitem.save
-      redirect_to new_grocery_item_url
+      redirect_to new_user_grocery_item_url
     else
       render :new
     end
   end
 
   def show
-
     @groceryitem = GroceryItem.find(params[:id])
   end
 
   def index
-
     @groceryitem = current_user.grocery_items
     @groceryitems = GroceryItem.search(params[:search])
-
     respond_to do |format|
       format.html { }
       format.js { }
