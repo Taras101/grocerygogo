@@ -16,7 +16,7 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">My Site</a></h1>
+      <h1><a href="#">Grocery Glider</a></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
@@ -25,12 +25,13 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <%= yield :nav %>
-      <li class="active"><a href="#">Right Button Active</a></li>
-      <li class="has-dropdown">
-        <a href="#">Right Button with Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-        </ul>
+      <li class="userinfo">
+        <% if current_user %>
+          <% link_to current_user.email, user_path(current_user)%>
+          <%= link_to "Log out", logout_path %>
+        <% else %>
+          <%= link_to "Log in", login_path %> or <%= link_to "Sign up", new_user_path %>
+        <% end %>
       </li>
     </ul>
 
@@ -41,20 +42,6 @@
   </section>
 </nav>
 
-
-
-
-
-
-
-  <p class="userinfo">
-    <% if current_user %>
-    Logged in as <%= link_to current_user.email, user_path(current_user)%>
-    <%= link_to "Log out", logout_path %>
-    <% else %>
-    <%= link_to "Log in", login_path %> or <%= link_to "Sign up", new_user_path %>
-    <% end %>
-  </p>
   <% if flash[:notice] %>
   <p id="notice"><%= flash[:notice] %></p>
   <% end %>

@@ -2,7 +2,7 @@
 <ul id="sortable">
 	<% @groceryitems.each do |item|%>
 	<li id="items_<%= item.id %>">
-		<%= item.item %>
-		<%= button_to 'Delete', user_grocery_item_url(current_user, item), :confirm => "Are you sure you want to delete this product?", :method => :delete %></li>
+		<span class="grocery-item"><%= item.item %></span>
+		<span class="delete-button"><%= button_to 'Delete', user_grocery_item_url(current_user, item), :confirm => "Are you sure you want to delete this product?", :method => :delete %></li></span>
 		<% end %>
 	</ul>

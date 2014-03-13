@@ -13,6 +13,16 @@
 
  *= require_tree .
  */
+ body{
+ 	background-color: #B29B09
+ }
  #sortable { list-style-type: none; }
  /*#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; }*/
  /*#sortable li span { position: absolute; margin-left: -1.3em; }*/
+.field{ width: 60%;}
+.grocery-item {
+	float: left;
+}
+.delete-button{
+text-align: right
+}

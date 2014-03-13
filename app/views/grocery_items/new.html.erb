@@ -1,8 +1,17 @@
 
-<%= link_to 'View Grocery List', user_grocery_items_path( :user_id => current_user.id ) %>
+<div class="row">
+  <div class="large-4 columns">
+  	<%= render 'form' %>
+  </div>
 
-<%= render 'form' %>
+  <div class="large-4 columns">
+		<%= link_to 'View Grocery List', user_grocery_items_path( :user_id => current_user.id ) %>
 
-<div id="list">
     <%= render "edit" %>
+	</div>
+<div class="large-4 columns">
+
+  </div>
+
 </div>
+

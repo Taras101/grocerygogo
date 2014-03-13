@@ -1,23 +1,25 @@
-<h1> Grocery groceryitem </h1>
-<ul id="sortable" >
-	<% @groceryitems.each do |groceryitem|%>
-	  <li> <%= groceryitem.item %></li>
-	<% end %>
-</ul>
-<h1>Flyer results</h1>
-	<%  @groceryitems.each do |groceryitem|%>
-  	<% pro = Product.search(groceryitem.item).each %>
-		<% if pro %>
-			<%pro.each do |p| %>
-			<p>
-	  		<%= p.product.name %>
-	  		<%= p.product.brand %>
-	  		<%= p.product.notes %>
-	  	 $<%= p.formatted_price %> per
-	  		<%= p.amount %>
-	  		<%= p.measure %>
-	  		<%= p.store.name %>
-	  	<% end %>
+<h1> Grocery List </h1>
+	<ul id="sortable" >
+		<% @groceryitems.each do |groceryitem|%>
+	  	<li> <%= groceryitem.item %></li>
 		<% end %>
-  </p>
-	<% end %>
+	</ul>
+
+<h1>Flyer results</h1>
+	<ul>
+		<% @groceryitems.each do |groceryitem| %>
+  	<% pro = Product.search(groceryitem.item).each %>
+				<% if pro %>
+					<%pro.each do |p| %>
+						<li>>
+				  		<%= p.product.name %>
+				  		<%= p.product.brand %>
+				  		<%= p.product.notes %>
+				  	 $<%= p.formatted_price %> per
+				  		<%= p.amount %>
+				  		<%= p.measure %>
+				  		<%= p.store.name %>
+				  	<% end %>
+					<% end %>
+  	<% end %>
+  </ul>
