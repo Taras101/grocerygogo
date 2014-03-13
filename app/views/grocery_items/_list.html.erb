@@ -1,10 +1,11 @@
-<h1> Grocery List </h1>
+<div class="row">
+  <div class="large-4 columns"><h1> Grocery List </h1>
 <ul id="sortable" >
 	<% @groceryitem.each do |groceryitem|%>
 	<li> <%= groceryitem.item %></li>
 	<% end %>
-</ul>
-<h1>Flyer results</h1>
+</ul></div>
+  <div class="large-8 columns"><h1>Flyer results</h1>
 <%  @groceryitem.each do |groceryitem|%>
 <% pro = Product.search(groceryitem.item).each %>
 <% if pro %>
@@ -20,4 +21,5 @@
 	<% end %>
 	<% end %>
 </p>
-<% end %>
+<% end %></div>
+</div>

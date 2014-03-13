@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *= require jquery.ui.all
  *= require_self
+ *= require foundation_and_overrides
+
  *= require_tree .
  */
  #sortable { list-style-type: none; margin: 0; padding: 0; width: 15%; }

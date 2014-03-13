@@ -5,14 +5,15 @@ Grocerygogo::Application.routes.draw do
     resources :products, :only => [:index]
   end
   resources :products
-map.resources :grocery_items, :collection => { :sort => :post}
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
   resources :sessions
   resources :users do
-    resources :grocery_items
+    resources :grocery_items do
+     post :sort, on: :collection
+     end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

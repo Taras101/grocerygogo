@@ -13,9 +13,11 @@
 //= require jquery
 //= require jquery.ui.all
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
 $(document).ready(function() {
+		$(document).foundation();
     $( "#sortable" ).sortable({
         placeholder: "ui-sortable-placeholder"
     });
@@ -26,3 +28,4 @@ $(document).ready(function() {
         $.getScript('/products?search=' + searchValue);
     });
 });
+
