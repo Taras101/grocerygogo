@@ -20,32 +20,39 @@ class GroceryItemsController < ApplicationController
   end
 
   def index
-    @groceryitem = current_user.grocery_items
-    @groceryitems = GroceryItem.search(params[:search])
-    respond_to do |format|
-      format.html { }
-      format.js { }
+      @groceryitem = current_user.grocery_items
+      @groceryitems = GroceryItem..all(:order => ’position’)
+      respond_to do |format|
+        format.html { }
+        format.js { }
+      end
     end
-  end
 
 
-  def edit
-    @groceryitem = GroceryItem.find(params[:id])
-  end
+    def edit
+      @groceryitem = GroceryItem.find(params[:id])
+    end
 
-  def update
-    @groceryitem = GroceryItem.find(params[:id])
+    def update
+      @groceryitem = GroceryItem.find(params[:id])
       if @groceryitem.update_attributes(groceryitem_params)
        redirect_to groceryitems_path(@groceryitem)
-      else
-        render :edit
-      end
+     else
+      render :edit
+    end
   end
 
   def destroy
     @groceryitem = current_user.grocery_items
     @groceryitem.destroy
     redirect_to new_user_grocery_item_url
+  end
+
+  def sort
+    params[@groceryitems].each_with_index do |id, index|
+      GroceryItem.update_all([’position=?’, index+1], [’id=?’, id])
+    end
+    render :nothing => true
   end
 
   private

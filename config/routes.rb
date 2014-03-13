@@ -5,7 +5,7 @@ Grocerygogo::Application.routes.draw do
     resources :products, :only => [:index]
   end
   resources :products
-
+map.resources :grocery_items, :collection => { :sort => :post}
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
