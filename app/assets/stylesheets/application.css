@@ -13,7 +13,11 @@
 
  *= require_tree .
  */
+ h1{
+font-family: 'Nothing You Could Do', cursive;
+ }
  body{
+ 	 	font-family: 'Alegreya SC', serif;
  	background-color: #B29B09
  }
  #sortable { list-style-type: none; }
@@ -24,5 +28,32 @@
 	float: left;
 }
 .delete-button{
-text-align: right
+text-align: right;
+font-color: #FFF840;
+font-weight: normal;
+font-align: center;
+}
+.sty-button{
+
+font-color: #FFF840;
+font-weight: normal;
+background-color: #fff840;
+border-radius: 50;
+}
+.label-font{
+	font-size: 2.2em;
+	font-family: 'Nothing You Could Do', cursive;
+}
+#title{
+	font-size: 2.2em;
+	font-family: 'Nothing You Could Do', cursive;
+}
+.right{
+	font-size: 2.2em;
+}
+/*.grocery-item{
+	font-size: 1.5em;
+}*/
+.top-bar{
+	padding: 50px;
 }

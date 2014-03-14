@@ -42,7 +42,8 @@
 // We use these to control various global styles
  $body-bg: #B29B09;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $body-font-family: 'Alegreya SC', serif,"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $body-font-family1: 'Nothing You Could Do', cursive;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -117,7 +118,7 @@ $primary-color: #FFF840;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: $body-font-family1;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 $header-font-color: #FFF840;
@@ -127,7 +128,7 @@ $header-font-color: #FFF840;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
+ $h1-font-family: 'Nothing You Could Do', cursive;
 // $h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
@@ -488,10 +489,10 @@ $header-font-color: #FFF840;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
-// $input-bg-color: #fff;
-// $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
-// $input-border-color: scale-color(#fff, $lightness: -20%);
-// $input-focus-border-color: scale-color(#fff, $lightness: -40%);
+ $input-bg-color: #fff840;
+ $input-focus-bg-color: scale-color(#fff840, $lightness: -2%);
+ $input-border-color: scale-color(#fff840, $lightness: -20%);
+ $input-focus-border-color: scale-color(#fff840, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
@@ -1148,7 +1149,7 @@ $header-font-color: #FFF840;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+ $topbar-link-color: #fff840;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
