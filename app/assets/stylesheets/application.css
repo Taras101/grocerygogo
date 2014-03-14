@@ -13,33 +13,34 @@
 
  *= require_tree .
  */
- h1{
-font-family: 'Nothing You Could Do', cursive;
+h1{
+	font-family: 'Nothing You Could Do', cursive;
  }
- body{
- 	 	font-family: 'Alegreya SC', serif;
+body{
+ 	font-family: 'Alegreya SC', serif;
  	background-color: #B29B09;
- 	background-image: 'glyder3.png';
+
+ 	background-image: image-url("glyder3.jpg")
  }
- #sortable { list-style-type: none; }
+#sortable { list-style-type: none; }
  /*#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; }*/
  /*#sortable li span { position: absolute; margin-left: -1.3em; }*/
-.field{ width: 60%;}
+.field{
+	width: 60%;
+}
 .grocery-item {
 	float: left;
 }
 .delete-button{
-text-align: right;
-font-color: #FFF840;
-font-weight: normal;
-font-align: center;
+	text-align: right;
+	font-color: #FFF840;
+	font-weight: normal;
 }
 .sty-button{
-
-font-color: #FFF840;
-font-weight: normal;
-background-color: #fff840;
-border-radius: 50;
+	font-color: #FFF840;
+	font-weight: normal;
+	background-color: #fff840;
+	border-radius: 50;
 }
 .label-font{
 	font-size: 2.2em;

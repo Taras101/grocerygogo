@@ -43,7 +43,7 @@ class GroceryItemsController < ApplicationController
   end
 
   def destroy
-    @groceryitem = current_user.grocery_items
+    @groceryitem = current_user.grocery_items.find(params[:id])
     @groceryitem.destroy
     redirect_to new_user_grocery_item_url
   end

@@ -1,65 +1,78 @@
-
-
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :brand %><br />
-        <%= f.text_area :brand %>
-      </div>
-      <div class="field">
-        <%= f.label :notes %><br>
-        <%= f.text_area :notes %>
-      </div>
-
-  <%= f.fields_for :prices do |p| %>
-
-      <div class="field">
-        <%= p.label :price_in_cents %><br />
-        <%= p.text_field :price %>
-      </div>
-
-      <div class="field">
-        <%= p.label :amount %><br />
-        <%= p.text_field :amount %>
-      </div>
-
-      <div class="field">
-        <%= p.label :measure %><br />
-        <%= p.text_field :measure %>
-      </div>
-
-      <div class="field">
-        <%= p.label :valid_from %><br />
-        <%= p.date_select :valid_from %>
-      </div>
-
-      <div class="field">
-        <%= p.label :valid_to %><br />
-        <%= p.date_select :valid_to %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= form_for(@product) do |f| %>
+      <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+          <ul>
+          <% @product.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
         </div>
-
-    <div class="field">
-        <%= p.select(:store_id, Store.all.map { |s| [s.name,s.id] })  %><br />
-    </div>
-
-  <% end %>
-
-
-  <div class="actions">
-    <%= f.submit %>
+    <% end %>
   </div>
-<% end %>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+&nbsp;
+  </div>
+
+  <div class="large-4 columns">
+
+     <h1>New product</h1>
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :brand %>
+            <%= f.text_area :brand %>
+          </div>
+          <div class="field">
+            <%= f.label :notes %>
+            <%= f.text_area :notes %>
+          </div>
+
+      <%= f.fields_for :prices do |p| %>
+
+          <div class="field">
+            <%= p.label :price_in_cents %>
+            <%= p.text_field :price %>
+          </div>
+
+          <div class="field">
+            <%= p.label :amount %>
+            <%= p.text_field :amount %>
+          </div>
+
+          <div class="field">
+            <%= p.label :measure %>
+            <%= p.text_field :measure %>
+          </div>
+
+          <div class="field">
+            <%= p.label :valid_from %><br />
+            <%= p.date_select :valid_from %>
+          </div>
+
+          <div class="field">
+            <%= p.label :valid_to %><br />
+            <%= p.date_select :valid_to %>
+            </div>
+
+        <div class="field">
+            <%= p.select(:store_id, Store.all.map { |s| [s.name,s.id] })  %><br />
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit :class => 'sty-button' %>
+      </div>
+    <% end %>
+    </div>
+    <div class="large-4 columns">
+  </div>
+</div>
+

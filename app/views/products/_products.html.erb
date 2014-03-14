@@ -1,6 +1,15 @@
-<h2> Products </h2>
-<% @products.each do |price|%>
-  <p><%= link_to price.product.name ,product_path(price.product.id) %> , <%= price.product.brand %>
-  <%= price.product.notes %>
-  $<%= price.product.prices.last.formatted_price %>per<%= price.product.prices.last.amount %><%= price.product.prices.last.measure %></p>
-<% end %>
+<div class="row">
+	<h2> Flyer Products </h2>
+		  <div class="large-6 columns">
+				<% @products.each do |price|%>
+				  <p><%= link_to price.product.name ,product_path(price.product.id) %><%= price.product.brand %>
+				  <%= price.product.notes %>
+
+			  $<%= price.product.prices.last.formatted_price %> per <%= price.product.prices.last.amount %> <%= price.product.prices.last.measure %></p>
+				<% end %>
+			</div>
+
+			<div class="large-6 columns">
+				<%= image_tag "glyder3.jpg" %>
+			</div>
+</div>
