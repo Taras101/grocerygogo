@@ -1,22 +1,24 @@
-<div> <%= link_to 'Stores', stores_path %> </div>
-<div> <%= link_to 'Modify Grocery List', new_user_grocery_item_path(user_id: current_user.id) %> </div>
-<div> <%= link_to 'Add Products', new_product_path %> </div>
-<div> <%= link_to 'Show all current flyer products', products_path %> </div>
-
-  <% Store.all.each do |s| %>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="links"><%= link_to 'Stores', stores_path %></div>
+		<div class="links"><%= link_to 'Modify Grocery List', new_user_grocery_item_path(user_id: current_user.id) %></div>
+		<div class="links"><%= link_to 'Add Products', new_product_path %> </div>
+		<div class="links"><%= link_to 'Show all current flyer products', products_path %> </div>
+<div>
+  	<% Store.all.each do |s| %>
     <%= link_to s.name, store_products_path(s)  %>
-  <% end %>
-
-  <%= form_tag products_path, remote: true ,:method => 'get', id: 'search-form' do %>
-    <p><%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
+  	<% end %>
+</div>
+  	<%= form_tag products_path, remote: true ,:method => 'get', id: 'search-form' do %>
+    	<p><%= text_field_tag :search, params[:search] %>
+    		<%= submit_tag "Search", :name => nil %>
+    	</p>
+  		<% end %>
 <div id="products">
   <%= render "products" %>
 </div>
 
-
+</div>
 
 
 
