@@ -1,4 +1,4 @@
-<h1> Products </h1>
+<h2> Products </h2>
 <% @products.each do |price|%>
   <p> <%= link_to price.product.name ,product_path(price.product.id) %> , <%= price.product.brand %></p>
   <p><%= price.product.notes %></p>
