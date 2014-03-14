@@ -1,28 +1,40 @@
 <div class="row">
-  <div class="large-4 columns"><h1> Grocery List </h1>
-		<ul id="sortable" >
-		<% @groceryitem.each do |groceryitem|%>
-			<li> <%= groceryitem.item %></li>
-		<% end %>
-		</ul>
+	<div class="large-12 columns">
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="large-2 columns">
+		<div><a href=""></a> </div>
 	</div>
 
-  <div class="large-8 columns"><h1>Glyder results</h1>
-		<%  @groceryitem.each do |groceryitem|%>
-		<% pro = Product.search(groceryitem.item).each %>
-			<% if pro %>
-				<%pro.each do |p| %>
-					<p>
-						<%= p.product.name %>
-						<%= p.product.brand %>
-						<%= p.product.notes %>
-						$<%= p.formatted_price %> per
-						<%= p.amount %>
-						<%= p.measure %>
-						<%= p.store.name %>
-					</p>
+  <div class="large-4 columns">
+  	<h1> Grocery List </h1>
+			<ul id="sortable" >
+				<% @groceryitem.each do |groceryitem|%>
+					<li> <%= groceryitem.item %></li>
+				<% end %>
+			</ul>
+	</div>
+
+  <div class="large-6 columns">
+  	<h1>Glyder results</h1>
+			<%  @groceryitem.each do |groceryitem|%>
+			<% pro = Product.search(groceryitem.item).each %>
+				<% if pro %>
+					<%pro.each do |p| %>
+						<p>
+							<%= p.product.name %>
+							<%= p.product.brand %>
+							<%= p.product.notes %>
+							$<%= p.formatted_price %> per
+							<%= p.amount %>
+							<%= p.measure %>
+							<%= p.store.name %>
+						</p>
+					<% end %>
 				<% end %>
 			<% end %>
-		<% end %>
 	</div>
 </div>
